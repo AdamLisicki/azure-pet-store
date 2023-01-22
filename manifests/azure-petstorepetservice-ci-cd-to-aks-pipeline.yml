@@ -2,13 +2,28 @@
 # Build and push image to Azure Container Registry; Deploy to Azure Kubernetes Service
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
-trigger:
-  branches:
-    include:
-    - main
-  paths:
-    include:
-    - petstore/petstorepetservice/*
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+trigger: none
+pool:
+  vmImage: 'windows-latest'
+steps:
+- task: UseDotNet@2
+  displayName: 'Use dotnet'
+  inputs:
+    version: 3.1.x
+- task: UseDotNet@2
+  displayName: 'Use dotnet'
+  inputs:
+    version: 5.0.x
+- task: UseDotNet@2
+  displayName: 'Use dotnet'
+  inputs:
+    version: 6.0.x
+- task: MicrosoftSecurityDevOps@1
+  displayName: 'Microsoft Security DevOps'
 
 resources:
 - repo: self
