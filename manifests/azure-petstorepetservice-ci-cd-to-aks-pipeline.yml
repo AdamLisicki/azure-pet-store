@@ -28,14 +28,14 @@ stages:
   displayName: Build stage
 
   jobs: 
-  - job: Analysis
-    displayName: Security Analysis
-    pool:
-      vmImage: 'windows-latest'
-    steps:
-    - task: MicrosoftSecurityDevOps@1
-      inputs:
-        categories: 'secrets'
+ # - job: Analysis
+ #   displayName: Security Analysis
+ #   pool:
+ #     vmImage: 'windows-latest'
+ #   steps:
+#  - task: MicrosoftSecurityDevOps@1
+#      inputs:
+ #       categories: 'secrets'
 
   - job: Build
     displayName: Build App
